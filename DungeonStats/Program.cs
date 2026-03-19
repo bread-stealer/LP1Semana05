@@ -11,7 +11,7 @@ namespace DungeonStats
             => Math.Max(attack - defense, 0);
 
         private static int CriticalHit(int damage)
-            => damage <= 0 ? 0 : 1 + CriticalHit(damage - 1);
+            => damage <= 0 ? 0 : damage + CriticalHit(damage - 1);
         private static void Main(string[] args)
         {
             int attack = int.Parse(args[0]);
